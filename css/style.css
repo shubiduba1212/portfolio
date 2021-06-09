@@ -319,6 +319,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  text-align: center;
 }
 .category__btn.active,
 .category__btn:hover {
@@ -347,7 +348,9 @@ p {
   transition: all var(--animation-duration);
 }
 
-.category__btn:first-child .category__count {
+.category__btn:first-child .category__count span {
+  position: relative;
+  left: -1.5px;
 }
 
 .work__projects {
