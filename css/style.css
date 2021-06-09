@@ -228,6 +228,9 @@ p {
 #skills {
   background-color: var(--color-green);
 }
+#skills h1 {
+  color: var(--color-white);
+}
 
 .skillset {
   display: flex;
