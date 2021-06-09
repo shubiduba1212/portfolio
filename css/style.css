@@ -20,7 +20,8 @@
   --color-light-black: #2d2d2d;
   --color-dark-grey: #4d4d4d;
   --color-light-grey: #7c7979;
-  --color-black: #000000;
+  --color-black: #161616;
+  --color-black-true: #000000;
 
   /* Font size */
   --font-large: 48px;
@@ -41,4 +42,30 @@
 /* Universal tags */
 * {
   box-sizing: border-box;
+}
+
+/* Typography */
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+  margin: 16px 0;
+}
+h2 {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+h3 {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+p {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 4px 0;
 }
