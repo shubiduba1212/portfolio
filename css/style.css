@@ -3,17 +3,18 @@
 :root {
   /* Color */
   /* gradient color */
-  --color-mint: #22c1c3;
-  --color-dark-mint: #00a3af;
+  --color-mint: #67d4d2;
+  --color-dark-mint: #25c1c3;
   --color-transparent-mint: #22c0c3b2;
-  --color-light-mint: #45c1ac;
-  --color-green: #64bf94;
-  --color-light-green: #84bd80;
-  --color-olive: #a1bd6e;
-  --color-olive-yellow: #c9bc50;
+  --color-light-mint: #7ad3c7;
+  --color-green: #afd2a0;
+  --color-light-green: #9fd3ae;
+  --color-olive: #abd1a5;
+  --color-olive-yellow: #d1d08b;
   --color-dark-yellow: #debc42;
-  --color-yellow: #fdbb2d;
-  --color-light-yellow: #fdbb2db0;
+  --color-yellow: #f7d171;
+
+  --color-orange: #ff6d00;
   /* achromatic color */
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
@@ -172,6 +173,9 @@ p {
 .section {
   padding: 50px;
   text-align: center;
+  margin: auto;
+}
+.section__container {
   max-width: 1200px;
   margin: auto;
 }
@@ -218,4 +222,84 @@ p {
 
 .job__period {
   font-size: var(--font-micro);
+}
+
+/* Skills */
+#skills {
+  background-color: var(--color-green);
+}
+
+.skillset {
+  display: flex;
+  background-color: var(--color-white);
+  margin: 20px 0;
+  border-radius: var(--size-border-radius);
+}
+
+.skillset__title {
+  font-weight: var(--weight-semi-bold);
+}
+
+.skillset__left {
+  flex-basis: 60%;
+  background-color: var(--color-yellow);
+  padding: 20px;
+  border-radius: 4px 0 0 4px;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+}
+.skill__description span i {
+  font-size: var(--font-small);
+  padding-right: 5px;
+}
+
+.skill {
+  margin-bottom: 8px;
+}
+
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-white);
+}
+
+.skill__value {
+  width: 70%;
+  height: 3px;
+  background-color: var(--color-orange);
+}
+
+.skillset__right {
+  flex-basis: 40%;
+}
+
+.tools {
+  background-color: var(--color-white);
+  color: var(--color-olive);
+}
+
+.tools h3 {
+  color: var(--color-olive);
+}
+
+.tools,
+.etc {
+  padding: 20px;
+}
+
+.tools h3,
+.etc h3 {
+  font-weight: var(--weight-semi-bold);
+}
+
+.etc {
+  color: var(--color-white);
+  background-color: var(--color-olive-yellow);
+}
+
+.etc h3 {
+  color: var(--color-white);
 }
