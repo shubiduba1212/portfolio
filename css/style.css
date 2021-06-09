@@ -5,11 +5,9 @@
   /* gradient color */
   --color-mint: #67d4d2;
   --color-dark-mint: #25c1c3;
-  --color-transparent-mint: #22c0c3b2;
   --color-light-mint: #7ad3c7;
   --color-green: #afd2a0;
-  --color-light-green: #9fd3ae;
-  --color-olive: #abd1a5;
+  --color-dark-green: #88c071;
   --color-olive-yellow: #d1d08b;
   --color-dark-yellow: #debc42;
   --color-yellow: #f7d171;
@@ -195,7 +193,12 @@ p {
   height: 170px;
 }
 
-.major__title,
+.major__title {
+  color: var(--color-dark-mint);
+  font-weight: var(--weight-semi-bold);
+  font-size: var(--font-regular);
+}
+
 .major__description {
   color: var(--color-dark-grey);
 }
@@ -284,11 +287,12 @@ p {
 
 .tools {
   background-color: var(--color-white);
-  color: var(--color-olive);
+  color: var(--color-dark-green);
+  border-radius: 0 4px 0 0;
 }
 
 .tools h3 {
-  color: var(--color-olive);
+  color: var(--color-dark-green);
 }
 
 .tools,
@@ -304,6 +308,7 @@ p {
 .etc {
   color: var(--color-white);
   background-color: var(--color-olive-yellow);
+  border-radius: 0 0 4px 0;
 }
 
 .etc h3 {
@@ -315,11 +320,12 @@ p {
   margin: 40px;
 }
 .category__btn {
-  border: 1px solid var(--color-dark-white);
+  border: 2px solid var(--color-light-mint);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
   text-align: center;
+  color: var(--color-dark-mint);
 }
 .category__btn.active,
 .category__btn:hover {
