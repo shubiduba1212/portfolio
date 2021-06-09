@@ -480,3 +480,32 @@ p {
   color: var(--color-white);
   font-size: 64px;
 }
+
+/* Contact */
+#contact {
+  background-color: var(--color-mint);
+}
+
+.contact__title,
+.contact__email,
+.contact__rights {
+  color: var(--color-white);
+}
+
+.contact__title {
+  margin: 32px;
+}
+
+.contact__links {
+  font-size: var(--font-large);
+  margin: 12px 0;
+}
+
+.contact__links a {
+  transition: all var(--animation-duration);
+}
+
+.contact__links a:hover i {
+  transform: scale(1.2);
+  color: var(--color-black);
+}
