@@ -3,14 +3,16 @@
 // Make navbar colored when the window is scrolled
 const navBar = document.querySelector('#navbar');
 const navBarHeight = navBar.getBoundingClientRect().height;
+const navBarToggleBtn = document.querySelector('.navbar__toggle-btn');
 document.addEventListener('scroll', () => {
   if(window.scrollY > navBarHeight) {
     navBar.classList.add('navbar--darker');
+    navBarToggleBtn.style.top = `15px`;
   } else {
     navBar.classList.remove('navbar--darker');
+    navBarToggleBtn.style.top = `23px`;
   }
 });
-
 
 // Handle scrolling when the navbar menu is clicked
 const navBarMenu = document.querySelector('.navbar__menu');
@@ -20,9 +22,14 @@ navBarMenu.addEventListener('click', (event) => {
   if(link == null) {
     return;
   }
+  navBarMenu.classList.remove('open');  
   scrollIntoView(link);
 });
 
+// Navbar toggle button
+navBarToggleBtn.addEventListener('click', () => {
+  navBarMenu.classList.toggle('open');
+});
 
 // when Home Contact Button is clicked
 const homeContact = document.querySelector('.home__contact');
