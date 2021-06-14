@@ -53,16 +53,27 @@ topBtn.addEventListener('click', () => {
   scrollIntoView('#home');
 })
 
-//Projects Sorting 
+// Projects Sorting 
 const workBtnContainer = document.querySelector('.work__categories');
 const projectContainer = document.querySelector('.work__projects');
 const projects = document.querySelectorAll('.project');
 workBtnContainer.addEventListener('click', (event) => {
   const sort = event.target.dataset.sort || event.target.parentNode.dataset.sort;
-  console.log(sort);
   if(sort == null) {
     return;
   }   
+
+  // work category button
+  const active = document.querySelector('.category__btn.active');
+  const target = event.target.nodeName === 'BUTTON'? event.target : event.target.parentNode;
+  active.classList.remove('active');  
+  if(sort == '*') {
+    const allActive = document.querySelector('.category__btn.all');
+    allActive.classList.remove('active'); 
+    allActive.classList.add('active');
+  } else {  
+  target.classList.add('active');
+  }
   projectContainer.classList.add('anim-out');
   setTimeout(() => {
     projects.forEach((project) => {

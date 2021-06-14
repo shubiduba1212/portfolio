@@ -139,14 +139,14 @@ p {
 .navbar__menu__item {
   padding: 8px 12px;
   margin: 0 4px;
+  color: var(--color-white);
   cursor: pointer;
+  border: 1px solid transparent;
   border-radius: var(--size-border-radius);
 }
 
-.navbar__menu__item.active {
-  border: 1px solid var(--color-white);
-}
 .navbar__menu__item:hover {
+  border: 1px solid var(--color-white);
   background-color: var(--color-dark-mint);
 }
 
@@ -391,7 +391,7 @@ p {
 
 .category__btn:first-child .category__count span {
   position: relative;
-  left: -1.5px;
+  left: -1.5%;
 }
 
 .work__projects {
