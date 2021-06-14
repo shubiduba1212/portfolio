@@ -210,6 +210,7 @@ p {
   margin: auto;
 }
 .section__container {
+  position: relative;
   max-width: 1200px;
   margin: auto;
   padding: 50px;
@@ -355,6 +356,7 @@ p {
   margin: 40px;
 }
 .category__btn {
+  position: relative;
   border: 2px solid var(--color-light-mint);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
@@ -371,27 +373,28 @@ p {
 .category__btn.active .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .category__count {
   background-color: var(--color-yellow);
   border-radius: 50%;
   color: var(--color-white);
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   display: inline-block;
-  line-height: 28px;
-  position: relative;
-  top: -20px;
-  left: 4px;
+  line-height: 24px;
+  position: absolute;
+  top: -10px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration);
 }
 
 .category__btn:first-child .category__count span {
   position: relative;
-  left: -1.5%;
+  left: -1.5px;
 }
 
 .work__projects {
@@ -448,8 +451,14 @@ p {
   transition: all var(--animation-duration);
 }
 
+.design {
+  cursor: pointer;
+  color: var(--color-white);
+}
+
 .project__description h3 {
-  color: var(--color-yellow);
+  color: var(--color-dark-yellow);
+  font-weight: var(--weight-semi-bold);
 }
 
 .project__description h3:after {
@@ -468,7 +477,8 @@ p {
 .pop__up {
   display: none;
   position: absolute;
-  left: 50%;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -479,10 +489,6 @@ p {
   display: block;
   opacity: 1;
   transform: translateY(0px);
-}
-
-.pop__up.active .dark__bg {
-  opacity: 0;
 }
 
 .dark__bg {
@@ -497,7 +503,7 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 100%;
   max-width: 1000px;
   height: 80%;
   padding: 30px;
@@ -505,18 +511,32 @@ p {
   border-radius: var(--size-border-radius);
 }
 .pop__img {
-  height: 80%;
-  background: url("/img/app.jpg") center/cover no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
-.pop__txt {
-  padding: 20px 0;
+.pop__img.app_pop {
+  background-position: left center;
 }
 
-.pop__title {
-  padding-bottom: 10px;
-  font-size: var(--font-medium);
-  font-weight: var(--weight-semi-bold);
+.pop__img.app_pop:hover {
+  background-position: right center;
+  transition: background-position 2s ease-in-out;
+}
+
+.pop__img.mood_board_pop {
+  background-position: center top;
+}
+
+.pop__img.mood_board_pop:hover {
+  background-position: center bottom;
+  transition: background-position 2s ease-in-out;
+}
+
+.pop__img.pattern_polygon_pop {
+  background-size: contain;
+  background-position: center center;
 }
 
 .pop__close__btn {
@@ -576,6 +596,14 @@ p {
 
 /* Tablet Mode */
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font-size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
   .navbar__toggle-btn {
     display: block;
   }
@@ -600,12 +628,24 @@ p {
     display: block;
   }
 
+  .section {
+    padding: 16px;
+  }
+
+  #home {
+    padding: 40px 16px;
+    padding-top: 120px;
+  }
+
   .about__majors {
     flex-direction: column;
   }
 
   .major {
     margin-bottom: 38px;
+  }
+
+  .category__count {
   }
 
   .skillset {
@@ -626,5 +666,84 @@ p {
 
   .project {
     flex-grow: 1;
+  }
+}
+
+/* less than 1200px width */
+@media screen and (max-width: 1200px) {
+  .pop__close__btn {
+    position: absolute;
+    top: -56px;
+    right: 5px;
+    font-size: 50px;
+    padding: 6px 0;
+  }
+}
+/* Smart Phone Mode */
+@media screen and (max-width: 767px) {
+  .pop__up.active {
+    display: none;
+  }
+}
+@media screen and (max-width: 468px) {
+  #navbar {
+    padding: 16px 12px;
+  }
+  .navbar__logo {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .navbar__toggle-btn {
+    right: 12px;
+    padding-right: 0;
+  }
+
+  .navbar__toggle-btn span {
+    width: 16px;
+  }
+
+  .navbar__toggle-btn span:nth-child(2) {
+    margin: 3px 0;
+  }
+
+  .section {
+    padding: 50px 12px;
+  }
+
+  #home {
+    padding: 40px 10px;
+    padding-top: 120px;
+  }
+
+  .about__majors {
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+  .major {
+    margin-bottom: 30px;
+  }
+
+  .section__container {
+    padding: 50px 12px;
+  }
+
+  .work__categories {
+    margin: 40px 10px;
+  }
+
+  .category__btn {
+    padding: 8px 0;
+    margin: 4px 0;
+    width: 80%;
+  }
+
+  .category__count {
+    right: 24px;
+  }
+
+  .top__button {
+    right: 12px;
+    bottom: 12px;
   }
 }
