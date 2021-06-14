@@ -684,6 +684,12 @@ p {
   .pop__up.active {
     display: none;
   }
+
+  .category__btn {
+    padding: 8px 0;
+    margin: 4px 0;
+    width: 80%;
+  }
 }
 @media screen and (max-width: 468px) {
   #navbar {
@@ -730,12 +736,6 @@ p {
 
   .work__categories {
     margin: 40px 10px;
-  }
-
-  .category__btn {
-    padding: 8px 0;
-    margin: 4px 0;
-    width: 80%;
   }
 
   .category__count {
