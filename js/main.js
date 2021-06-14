@@ -53,12 +53,32 @@ topBtn.addEventListener('click', () => {
   scrollIntoView('#home');
 })
 
+//Projects Sorting 
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (event) => {
+  const sort = event.target.dataset.sort || event.target.parentNode.dataset.sort;
+  console.log(sort);
+  if(sort == null) {
+    return;
+  }   
+  projectContainer.classList.add('anim-out');
+  setTimeout(() => {
+    projects.forEach((project) => {
+      if(sort === '*' || sort === project.dataset.category) {
+        project.classList.remove('inactive');
+      } else {
+        project.classList.add('inactive');
+      }
+    });
+    projectContainer.classList.remove('anim-out');
+  }, 300)
+});
+
 
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({behavior: 'smooth'});
 }
-
-
-
 
