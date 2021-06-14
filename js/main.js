@@ -12,7 +12,7 @@ document.addEventListener('scroll', () => {
 });
 
 
-// Handle scrolling  when the navbar menu is clicked
+// Handle scrolling when the navbar menu is clicked
 const navBarMenu = document.querySelector('.navbar__menu');
 navBarMenu.addEventListener('click', (event) => {  
   const target = event.target;
@@ -24,7 +24,7 @@ navBarMenu.addEventListener('click', (event) => {
 })
 
 
-//when Home Contact Button is clicked
+// when Home Contact Button is clicked
 const homeContact = document.querySelector('.home__contact');
 homeContact.addEventListener('click', () => {
   scrollIntoView('#contact');
@@ -35,3 +35,11 @@ function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({behavior: 'smooth'});
 }
+
+
+// section Home faded by scrolling
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+})
