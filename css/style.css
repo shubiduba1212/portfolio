@@ -545,6 +545,24 @@ p {
   color: var(--color-black);
 }
 
+/* Top button */
+.top__button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: url("/img/top.png") center/cover no-repeat;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in;
+}
+
+.top__button.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* Tablet Mode */
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {

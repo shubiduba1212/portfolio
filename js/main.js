@@ -21,13 +21,36 @@ navBarMenu.addEventListener('click', (event) => {
     return;
   }
   scrollIntoView(link);
-})
+});
 
 
 // when Home Contact Button is clicked
 const homeContact = document.querySelector('.home__contact');
 homeContact.addEventListener('click', () => {
   scrollIntoView('#contact');
+});
+
+
+// section Home faded by scrolling
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+// show Top button when scrolling down
+const topBtn = document.querySelector('.top__button');
+document.addEventListener('scroll', () => {
+  if(window.scrollY > homeHeight / 2) {
+    topBtn.classList.add('visible');
+  } else {
+    topBtn.classList.remove('visible');
+  }
+});
+
+// Top button clicked then scrolled to home
+topBtn.addEventListener('click', () => {
+  scrollIntoView('#home');
 })
 
 
@@ -37,9 +60,5 @@ function scrollIntoView(selector) {
 }
 
 
-// section Home faded by scrolling
-const home = document.querySelector('.home__container');
-const homeHeight = home.getBoundingClientRect().height;
-document.addEventListener('scroll', () => {
-  home.style.opacity = 1 - window.scrollY / homeHeight;
-})
+
+
