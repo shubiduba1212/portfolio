@@ -143,6 +143,11 @@ p {
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: var(--size-border-radius);
+  transition: all 200ms linear;
+}
+
+.navbar__menu__item.active {
+  border: 1px solid var(--color-white);
 }
 
 .navbar__menu__item:hover {
@@ -214,6 +219,7 @@ p {
   max-width: 1200px;
   margin: auto;
   padding: 50px;
+  padding-top: 120px;
 }
 
 /* About */
@@ -522,7 +528,7 @@ p {
 
 .pop__img.app_pop:hover {
   background-position: right center;
-  transition: background-position 2s ease-in-out;
+  transition: background-position 2s linear;
 }
 
 .pop__img.mood_board_pop {
@@ -531,7 +537,7 @@ p {
 
 .pop__img.mood_board_pop:hover {
   background-position: center bottom;
-  transition: background-position 2s ease-in-out;
+  transition: background-position 2s linear;
 }
 
 .pop__img.pattern_polygon_pop {
