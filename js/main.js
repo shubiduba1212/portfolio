@@ -141,18 +141,17 @@ window.addEventListener('scroll', () => {
 // pop-up
 const popUp = document.querySelector('.pop__up');
 const popImg = document.querySelector('.pop__img');
-projectContainer.addEventListener('click', (event) => { 
-  popImg.className = 'pop__img';
-  const img = event.target.nodeName === 'DIV' ? event.target.dataset.image : event.target.parentNode.dataset.image;     
-  const className = event.target.className;
-  const nodeName = event.target.nodeName;
-  if(className == 'project__description design' || nodeName == 'SPAN' || nodeName == 'H3' ) {    
+projectContainer.addEventListener('click', (event) => {
+  if(!event.target.dataset.sort){
+    popUp.classList.remove('active');
+    return;
+  } else {
+    console.log('yes');
+    popImg.className = 'pop__img';
+    const img = event.target.nodeName === 'DIV' ? event.target.dataset.image : event.target.parentNode.dataset.image; 
     popUp.classList.add('active');
     popImg.setAttribute('style', `background-image: url('/img/${img}.png')`);    
-    popImg.classList.add(img);        
-  } else {
-    popUp.classList.remove('active');
-  }
+    popImg.classList.add(img); 
+  }  
 });
-
 
